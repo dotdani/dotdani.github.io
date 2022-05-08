@@ -14,19 +14,24 @@ body {
     padding: 0 1rem 1rem;
     min-height: 100vh;
     font-family: "Nunito", sans-serif;
-    font-zise: 1.2rem;
+    font-size: 1.2rem;
     color: #444444;
 }
 
 h1 {
     margin: 1rem 0;
     padding-bottom: 1rem;
-    border-bottom: 0.2rem solid #CCCCCC;
+    border-bottom: 0.2rem solid #EEEEEE;
     font-size: 2rem;
 }
 
 a {
     color: #2d77a4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 p {
@@ -42,6 +47,10 @@ button {
     font-size: 1rem;
     font-family: inherit;
     cursor: pointer;
+}
+
+button:not(.visible) {
+    display: none;
 }
 
 button:hover,
@@ -60,28 +69,43 @@ main {
 #icons {
     display: flex;
     flex-direction: row;
-    gap: 2rem;
-    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.3rem;
 }
 
-#icons img {
-    filter: grayscale(1);
-    transition: filter 100ms ease-out;
-}
-
-#icons a,
-#icons img {
+#icons a {
     display: inline-flex;
+}
+
+#icons img {
     width: 2.5rem;
     height: 2.5rem;
+    filter: grayscale(1);
+    opacity: 0.8;
+    transition: filter, opacity 100ms ease-out;
 }
 
 #icons a:hover img,
-#icons a:focus img {
+#icons a:focus img,
+#icons a:active img {
     filter: grayscale(0);
+    opacity: 1;
 }
 
 footer {
     text-align: right;
     font-size: 1rem;
+}
+
+footer p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.3rem;
+    margin: 0;
+}
+
+footer img {
+    width: 1.2rem;
+    height: 1.2rem;
 }
